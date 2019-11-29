@@ -1,0 +1,61 @@
+.education,
+.experience {
+  padding-top: 30px;
+  .timeline {
+    margin-top: 30px;
+    margin-left: 80px;
+    .timeline-item {
+      position: relative;
+      padding-bottom: 30px;
+      .left {
+        width: 20%;
+        h5 {
+          font-weight: bold;
+          font-size: 18px;
+        }
+        span {
+          font-size: 14px;
+          opacity: 0.6;
+        }
+      }
+      .divider {
+        position: absolute;
+        top: 0;
+        left: 19%;
+        width: 2px;
+        height: 100%;
+        background-color: #eee;
+        &:after {
+          content: "";
+          background-color: $blue;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top: 8px;
+          left: -4px;
+          border-radius: 50%;
+        }
+      }
+      .right {
+        margin-left: 5%;
+        h4 {
+          font-weight: bold;
+          font-size: 22px;
+        }
+        p {
+          opacity: 0.8;
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+.experience {
+  margin-top: 70px;
+  .button {
+    margin: 70px auto;
+    display: flex;
+    justify-content: center;
+  }
+}

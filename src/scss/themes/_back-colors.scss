@@ -1,0 +1,72 @@
+$themes: (
+  dark-blue: (color: $darkGray),
+  dark-red: (color: $darkRed),
+  dark-green: (color: $darkGreen),
+  dark-purple: (color: $darkPurple)
+);
+
+@each $theme, $map in $themes {
+  .#{$theme} {
+    $this: map-get($map, color);
+
+    .sidebar {
+      background-color: $this;
+    }
+
+    .btn-main::before {
+      background-color: $this;
+      border: 1px solid $this;
+    }
+
+    .btn-empty {
+      background-color: $this;
+      border: 1px solid $this;
+    }
+
+    .settings .settings-box .settings-content .toggle-sidebar .toggle-power {
+      background-color: $this;
+    }
+
+  }
+}
+
+.dark-blue {
+  .home {
+    background: url("../assets/home/cover-blue.png") no-repeat center center;
+    background-size: cover;
+  }
+  .about-me {
+    background: url("../assets/about/about-me-cover-blue.png");
+    background-size: cover;
+  }
+}
+.dark-red {
+  .home {
+    background: url("../assets/home/cover-red.png") no-repeat center center;
+    background-size: cover;
+  }
+  .about-me {
+    background: url("../assets/about/about-me-cover-red.png");
+    background-size: cover;
+  }
+}
+.dark-green {
+  .home {
+    background: url("../assets/home/cover-green.png") no-repeat center center;
+    background-size: cover;
+  }
+  .about-me {
+    background: url("../assets/about/about-me-cover-green.png");
+    background-size: cover;
+  }
+}
+.dark-purple {
+  .home {
+    background: url("../assets/home/cover-purple.png") no-repeat center center;
+    background-size: cover;
+  }
+  .about-me {
+    background: url("../assets/about/about-me-cover-purple.png");
+    background-size: cover;
+  }
+}

@@ -1,0 +1,104 @@
+.sidebar {
+  background-color: $darkGray;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 99999;
+  transition: all 0.3s ease-in-out;
+  @media (max-width: 768px) {
+    width: 100px;
+    nav {
+      padding-top: 0 !important;
+      margin-top: 100px;
+    }
+    li {
+      .icon {
+        font-size: 30px;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+  .logo {
+    padding: 40px 30px;
+    border-bottom: 2px solid #576574;
+    width: 100%;
+    cursor: default;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  nav {
+    padding-top: 40px;
+    li {
+      width: 100%;
+      a {
+        padding: 20px 30px;
+        color: rgb(202, 202, 202);
+        width: 100%;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        .icon {
+          margin-right: 20px;
+          transition: all 0.3s ease-in-out;
+        }
+        span {
+          transition: all 0.3s ease-in-out;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0%;
+          height: 100%;
+          background-color: rgba($blue, .2);
+          transition: all 0.3s ease-in-out;
+        }
+        &:hover,
+        &.router-link-exact-active {
+          text-decoration: none;
+          color: #fff;
+          .icon {
+            color: $blue;
+          }
+        }
+        &:hover::after,
+        &.router-link-exact-active::after {
+          width: 100%;
+          border-right: 4px solid $blue;
+        }
+        &:hover::after {
+          background-color: rgba($blue, .02);
+          border: none;
+        }
+        &.router-link-exact-active::after {
+          background-color: rgba($blue, .2);
+          border-right: 4px solid $blue;
+        }
+      }
+    }
+  }
+  &.sidebar-close {
+    width: 100px;
+    .logo {
+      display: none;
+    }
+    nav {
+      padding-top: 0 !important;
+      margin-top: 100px;
+    }
+    li {
+      .icon {
+        font-size: 30px;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+}

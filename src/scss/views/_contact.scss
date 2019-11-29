@@ -1,0 +1,59 @@
+.contact {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  form {
+    width: 80%;
+    margin: 30px auto;
+    padding: 55px 45px 45px 45px;
+    border-radius: 15px;
+    box-shadow: 0 0 55px rgba(0, 0, 0, 0.24);
+    .form-group {
+      input,
+      textarea {
+        display: inherit;
+        margin: 35px auto;
+        width: 80%;
+        padding: 5px 10px;
+        border: none;
+        border-bottom: 1px solid rgb(224, 224, 224);
+        transition: all 0.3s ease-in-out;
+        &:focus {
+          outline: none;
+          border-bottom: 1px solid $blue;
+        }
+      }
+      textarea {
+        height: 100px;
+      }
+      button {
+        display: inherit;
+        margin: 30px auto 0 auto;
+      }
+    }
+  }
+  .contact-info {
+    padding-top: 30px;
+    .info {
+      border: 1px solid rgba(204, 204, 204, 0.664);
+      padding: 20px 0;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      cursor: default;
+      .icon {
+        font-size: 40px;
+        opacity: 0.6;
+        transition: all 0.3s ease-in-out;
+      }
+      p {
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+      &:hover {
+        .icon {
+          opacity: 1;
+          color: $blue;
+        }
+      }
+    }
+  }
+}

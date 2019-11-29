@@ -1,0 +1,23 @@
+// Import Variables
+@import "./variables/colors";
+
+// Import Global
+@import "./layouts/global";
+@import "./layouts/sidebar";
+
+// Import Views
+@import "./views/home";
+@import "./views/about";
+@import "./views/resume";
+@import "./views/portfolio";
+@import "./views/blog";
+@import "./views/contact";
+
+// Import Components
+@import "./components/heading";
+@import "./components/buttons";
+@import "./components/settings-box";
+
+//Import themes
+@import "./themes/front-colors";
+@import "./themes/back-colors";

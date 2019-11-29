@@ -1,0 +1,121 @@
+.settings {
+  .box-controller {
+    position: fixed;
+    top: 150px;
+    right: 0;
+    background-color: #fff;
+    padding: 7px;
+    line-height: 50%;
+    box-shadow: 0 0 20px rgba(139, 139, 139, 0.548);
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+    z-index: 9999999;
+    .icon {
+      font-size: 20px;
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+      .icon {
+        color: $blue;
+      }
+    }
+  }
+  .settings-box {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    width: 200px;
+    min-height: 60%;
+    box-shadow: 0 0 20px rgba(139, 139, 139, 0.178);
+    border-radius: 10px 0 0 10px;
+    z-index: 999999999999;
+    transition: all 0.5s ease-in-out;
+    .setting-header {
+      background-color: $blue;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      border-radius: 10px 0 0 0;
+      .icon {
+        cursor: pointer;
+        opacity: 0.8;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    .settings-content {
+      padding: 10px 15px;
+      .color-list {
+        margin-top: 10px;
+        ul {
+          display: flex;
+          justify-content: space-around;
+          li {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: #000;
+            &:nth-child(1) {
+              background-color: $blue;
+            }
+            &:nth-child(2) {
+              background-color: $red;
+            }
+            &:nth-child(3) {
+              background-color: $green;
+            }
+            &:nth-child(4) {
+              background-color: $purple;
+            }
+          }
+        }
+      }
+      .toggle-sidebar {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .toggle-power {
+          display: flex;
+          justify-content: center;
+          background-color: $darkGray;
+          color: #fff;
+          border-radius: 20px;
+          position: relative;
+          cursor: pointer;
+          div {
+            padding: 0 10px;
+            &.on {
+              background-color: $blue;
+              border-radius: 20px 0 0 20px;
+            }
+          }
+          &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 42px;
+            height: 24px;
+            background-color: $black;
+            border-radius: 20px 0 0 20px;
+            transition: all 0.3s ease-in-out;
+          }
+          &.off::after {
+            left: 41px;
+            border-radius: 0 20px 20px 0;
+          }
+        }
+      }
+    }
+    &.toggle-setting {
+      right: -260px;
+    }
+  }
+}

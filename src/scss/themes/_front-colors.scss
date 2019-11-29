@@ -1,0 +1,89 @@
+$themes: (
+  blue-theme: (color: $blue),
+  red-theme: (color: $red),
+  green-theme: (color: $green),
+  purple-theme: (color: $purple)
+);
+
+@each $theme, $map in $themes {
+  .#{$theme} {
+    $this: map-get($map, color);
+
+    .settings-box .setting-header {
+      background-color: $this;
+    }
+    .settings .box-controller:hover .icon {
+      color: $this;
+    }
+
+    nav {
+      li {
+        a {
+          &::after {
+            background-color: rgba($this, .2);
+          }
+          &:hover,
+          &.router-link-exact-active {
+            .icon {
+              color: $this;
+            }
+          }
+          &:hover::after,
+          &.router-link-exact-active::after {
+            border-right: 4px solid $this;
+          }
+          &:hover::after {
+            background-color: rgba($this, .02);
+            border: none;
+          }
+          &.router-link-exact-active::after {
+            background-color: rgba($this, .2);
+            border-right: 4px solid $this;
+          }
+        }
+      }
+    }
+
+    .home .home-cover h3 {
+      color: $this;
+    }
+    .home .home-cover .icon:hover {
+      color: $this;
+    }
+
+    .heading span.main-color {
+      color: $this;
+    }
+
+    .services .content-services .service:hover {
+      background: linear-gradient(222deg, #020024 0%, #222f3e 34%, $this 100%);
+    }
+    .services .content-services .service .icon {
+      color: $this;
+    }
+
+    .education .timeline .timeline-item .divider::after,
+    .experience .timeline .timeline-item .divider::after {
+      background-color: $this;
+    }
+
+    .contact .contact-info .info:hover .icon {
+      color: $this;
+    }
+
+    .settings .settings-box .settings-content .toggle-sidebar .toggle-power div.on {
+      background-color: $this;
+    }
+
+    .btn-main {
+      background-color: $this;
+      border: 1px solid $this;
+    }
+
+    .btn-empty::before {
+      background-color: $this;
+      border: 1px solid $this;
+    }
+
+  }
+}

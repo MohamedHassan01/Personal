@@ -1,0 +1,89 @@
+.about-me {
+  padding-top: 30px;
+  background: url("../assets/about/about-me-cover-blue.png");
+  background-size: cover;
+  .photo {
+    margin-top: 30px;
+    height: 420px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+  .about-me-content {
+    margin: 40px 20px 0;
+    p {
+      line-height: 1.7em;
+    }
+    .special-info {
+      margin-top: 40px;
+      li {
+        label {
+          font-weight: bold;
+          display: inline-block;
+          min-width: 70px;
+          font-size: 14px;
+        }
+      }
+    }
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+.services {
+  margin-top: 70px;
+  background: url("../assets/about/services-cover.png") no-repeat;
+  .content-services {
+    margin-top: 70px;
+    .service {
+      margin-bottom: 40px;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(34, 34, 34, 0.13);
+      border-radius: 10px;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+      cursor: default;
+      .icon {
+        font-size: 40px;
+        color: rgba($blue, 0.8);
+      }
+      .icon-hidden {
+        color: #fff;
+        position: absolute;
+        top: -30px;
+        right: -47px;
+        font-size: 150px;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+      &:hover {
+        color: #fff;
+        background: rgb(2,0,36);
+        background: linear-gradient(222deg, rgba(2,0,36,1) 0%, rgba(34,47,62,1) 34%, rgba(0,212,255,1) 100%);
+        transform: translateY(-5px);
+        .icon {
+          opacity: 0;
+        }
+      }
+      &:hover .icon-hidden {
+        opacity: 0.5;
+      }
+      h4 {
+        margin: 20px 0;
+        font-weight: bold;
+      }
+      p {
+        opacity: 0.8;
+      }
+    }
+    .service-col:nth-child(2) {
+      margin-top: -40px;
+    }
+  }
+}
