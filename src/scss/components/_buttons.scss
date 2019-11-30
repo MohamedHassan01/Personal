@@ -7,6 +7,9 @@
   border: 1px solid $blue;
   border-radius: 10px;
   position: relative;
+  &:focus {
+    outline: none;
+  }
   &::before {
     content: "";
     background-color: $darkGray;
@@ -33,4 +36,28 @@
     border: 1px solid $blue;
   }
 
+}
+
+
+.info-btn,
+.live-btn {
+  background-color: $blue;
+  border: 1px solid $blue;
+  color: #fff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.live-btn {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: $blue;
 }
