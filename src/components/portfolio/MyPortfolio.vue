@@ -6,17 +6,17 @@
         <div class="content">
           <h4>{{ project.title }}</h4>
           <div class="buttons">
-            <button class="info-btn" @click.stop="project.active = true">More Details</button>
+            <button class="info-btn" @click="project.active = true">More Details</button>
             <button class="live-btn">
-              <a :href="project.live">Live Preview</a>
+              <a :href="project.live" target="_blank">Live Preview</a>
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <div v-for="project in projects" :key="project.title" @click.stop>
-      <div v-if="project.active" :class="[{active: project.active}, 'details']">
+    <div v-for="project in projects" :key="project.title">
+      <div :class="['details', {active: project.active}]">
         <h3>{{ project.title }}</h3>
         <ul class="skills list-unstyled">
           <li v-for="(skill, index) in project.details.skills" :key="index">{{ skill }}</li>
@@ -26,14 +26,17 @@
         </div>
         <div class="buttons">
           <button class="info-btn">
-            <a :href="project.details.repo">View Code</a>
+            <a :href="project.details.repo" target="_blank">View Code</a>
           </button>
           <button class="live-btn">
-            <a :href="project.live">Live Preview</a>
+            <a :href="project.live" target="_blank">Live Preview</a>
           </button>
         </div>
       </div>
+      <div v-show="project.active" class="details-layer" @click="project.active = false"></div>
     </div>
+
+    
   </div>
 </template>
 
@@ -49,10 +52,10 @@ export default {
           title: "Personal Portfolio",
           live: "#",
           details: {
-            skills: ["HTML", "CSS", "JS", "Vue", "Sass"],
-            repo: "#"
+            skills: ["HTML", "CSS", "Sass", "Javascript", "Vue"],
+            repo: "https://github.com/MohamedHassan01/Personal"
           },
-          active: false
+          active: true
         },
         {
           item: "two",
@@ -107,7 +110,7 @@ export default {
     }
   },
   mounted() {
-    document.addEventListener("click", this.closeDetails);
+    // document.addEventListener("click", this.closeDetails);
   }
 };
 </script>
