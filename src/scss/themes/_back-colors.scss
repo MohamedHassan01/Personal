@@ -27,6 +27,15 @@ $themes: (
       background-color: $this;
     }
 
+    .portfolio .project .content {
+      background-color: rgba($this, 0.4);
+    }
+
+    .info-btn {
+      background-color: $this;
+      border-color: $this;
+    }
+
   }
 }
 

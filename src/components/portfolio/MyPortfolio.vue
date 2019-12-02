@@ -1,12 +1,36 @@
 <template>
   <div class="my-portfolio">
-    <div class="project" :id="project.item" v-for="project in projects" :key="project.title">
-      <img :src="project.img" alt />
-      <div class="content">
-        <h4>{{ project.title }}</h4>
+    <div class="projects-container">
+      <div class="project" :id="project.item" v-for="project in projects" :key="project.title">
+        <img :src="project.img" alt />
+        <div class="content">
+          <h4>{{ project.title }}</h4>
+          <div class="buttons">
+            <button class="info-btn" @click.stop="project.active = true">More Details</button>
+            <button class="live-btn">
+              <a :href="project.live">Live Preview</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-for="project in projects" :key="project.title" @click.stop>
+      <div v-if="project.active" :class="[{active: project.active}, 'details']">
+        <h3>{{ project.title }}</h3>
+        <ul class="skills list-unstyled">
+          <li v-for="(skill, index) in project.details.skills" :key="index">{{ skill }}</li>
+        </ul>
+        <div class="image">
+          <img :src="project.img" alt />
+        </div>
         <div class="buttons">
-          <button class="info-btn">More Details</button>
-          <button class="live-btn">Live Preview</button>
+          <button class="info-btn">
+            <a :href="project.details.repo">View Code</a>
+          </button>
+          <button class="live-btn">
+            <a :href="project.live">Live Preview</a>
+          </button>
         </div>
       </div>
     </div>
@@ -23,34 +47,67 @@ export default {
           item: "one",
           img: require("@/assets/portfolio/personal.png"),
           title: "Personal Portfolio",
-          url: "#"
+          live: "#",
+          details: {
+            skills: ["HTML", "CSS", "JS", "Vue", "Sass"],
+            repo: "#"
+          },
+          active: false
         },
         {
           item: "two",
           img: require("@/assets/portfolio/CV.png"),
           title: "Personal Portfolio 2",
-          url: "#"
+          url: "#",
+          details: {
+            skills: ["HTML", "CSS", "JS", "Vue", "Sass"],
+            repo: "#"
+          },
+          active: false
         },
         {
           item: "three",
           img: require("@/assets/portfolio/motoCar.jpg"),
           title: "Personal Portfolio 3",
-          url: "#"
+          url: "#",
+          details: {
+            skills: ["HTML", "CSS", "JS", "Vue", "Sass"],
+            repo: "#"
+          },
+          active: false
         },
         {
           item: "four",
           img: require("@/assets/portfolio/wolfCapital.jpg"),
           title: "Personal Portfolio 4",
-          url: "#"
+          url: "#",
+          details: {
+            skills: ["HTML", "CSS", "JS", "Vue", "Sass"],
+            repo: "#"
+          },
+          active: false
         },
         {
           item: "five",
           img: require("@/assets/portfolio/personal.png"),
           title: "Personal Portfolio 5",
-          url: "#"
+          url: "#",
+          details: {
+            skills: ["HTML", "CSS", "JS", "Vue", "Sass"],
+            repo: "#"
+          },
+          active: false
         }
       ]
     };
+  },
+  methods: {
+    closeDetails() {
+      this.projects.forEach(e => (e.active = false));
+    }
+  },
+  mounted() {
+    document.addEventListener("click", this.closeDetails);
   }
 };
 </script>

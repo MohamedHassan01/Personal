@@ -1,97 +1,157 @@
 .portfolio {
   padding-top: 30px;
-  .my-portfolio {
+  a:hover {
+    text-decoration: none;
+  }
+  .projects-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 120px;
     column-gap: 10px;
     row-gap: 1em;
     margin-bottom: 30px;
-  }
-
-  .project {
     position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    &#one {
-      grid-area: 1 / 1 / 3 / 3;
-    }
-    &#two {
-      grid-area: 3 / 1 / 5 / 3;
-    }
-    &#three {
-      grid-area: 1 / 3 / 5 / 6;
-    }
-    &#four {
-      grid-area: 5 / 1 / 7 / 4;
-    }
-    &#five {
-      grid-area: 5 / 4 / 7 / 6;
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      transition: all 0.7s ease-in-out;
-    }
-    .content {
-      position: absolute;
-      top: 5%;
-      left: 5%;
-      width: 90%;
-      height: 90%;
-      z-index: 1;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba($blue, 0.5);
-      opacity: 0;
-      border-radius: 15px;
-      transition: all .5s ease-in-out;
-
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        top: 1.25em;
-        left: 1.25em;
-        bottom: 1.25em;
-        right: 1.25em;
-        border-radius: 15px;
-        transition: all .5s ease-in-out 0.3s;
+    .project {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      &#one {
+        grid-area: 1 / 1 / 3 / 3;
       }
-      &::before {
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #fff;
-        transform: scale(0, 1);
+      &#two {
+        grid-area: 3 / 1 / 5 / 3;
       }
-      &::after {
-        border-left: 1px solid #fff;
-        border-right: 1px solid #fff;
-        transform: scale(1, 0);
+      &#three {
+        grid-area: 1 / 3 / 5 / 6;
       }
-
-      .buttons {
-        z-index: 2;
-        margin-top: 30px;
-        width: 70%;
-        display: flex;
-        justify-content: space-around;
+      &#four {
+        grid-area: 5 / 1 / 7 / 4;
       }
-    }
-
-    &:hover {
+      &#five {
+        grid-area: 5 / 4 / 7 / 6;
+      }
       img {
-        transform: scale(1.1);
+        width: 100%;
+        height: 100%;
+        transition: all 0.7s ease-in-out;
       }
       .content {
-        opacity: 1;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        z-index: 1;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba($blue, 0.4);
+        opacity: 0;
+        border-radius: 15px;
+        transition: all .5s ease-in-out;
+  
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 1.25em;
+          left: 1.25em;
+          bottom: 1.25em;
+          right: 1.25em;
+          border-radius: 15px;
+          transition: all .5s ease-in-out 0.3s;
+        }
         &::before {
-          transform: scale(1.05, 1);
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+          transform: scale(0, 1);
         }
         &::after {
-          transform: scale(1, 1.05);
+          border-left: 1px solid #fff;
+          border-right: 1px solid #fff;
+          transform: scale(1, 0);
+        }
+  
+        .buttons {
+          z-index: 2;
+          margin-top: 30px;
+          width: 70%;
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+  
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+        .content {
+          opacity: 1;
+          &::before {
+            transform: scale(1.05, 1);
+          }
+          &::after {
+            transform: scale(1, 1.05);
+          }
+        }
+      }
+    }
+  }
+
+  .details {
+    position: fixed;
+    top: 10px;
+    left: 20%;
+    width: 60%;
+    height: 97%;
+    color: #000;
+    background-color: #fff;
+    padding: 30px 50px;
+    z-index: 999999;
+    text-align: center;
+    border-radius: 15px;
+    opacity: 0.5;
+    box-shadow: 0 4px 20px -4px #000;
+    transition: all 0.7s ease-in-out;
+    .image {
+      margin-top: 30px;
+      width: 100%;
+      height: 400px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .skills {
+      margin-top: 30px;
+      li {
+        display: inline-block;
+        padding: 5px;
+        background-color: $blue;
+        margin: 0 5px;
+        border-radius: 15%;
+        color: #fff;
+        font-size: 13px;
+      }
+    }
+    &.active {
+      opacity: 1;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      button {
+        margin: 0 20px;
+        box-shadow: 0 4px 10px -4px #000;
+        a {
+          color: #fff;
+        }
+        &:nth-child(2) a {
+          color: $blue;
         }
       }
     }
