@@ -55,7 +55,7 @@ export default {
             skills: ["HTML", "CSS", "Sass", "Javascript", "Vue"],
             repo: "https://github.com/MohamedHassan01/Personal"
           },
-          active: true
+          active: false
         },
         {
           item: "two",
@@ -103,14 +103,6 @@ export default {
         }
       ]
     };
-  },
-  methods: {
-    closeDetails() {
-      this.projects.forEach(e => (e.active = false));
-    }
-  },
-  mounted() {
-    // document.addEventListener("click", this.closeDetails);
   }
 };
 </script>
