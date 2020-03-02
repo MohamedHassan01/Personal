@@ -1,6 +1,6 @@
 <template>
   <div class="home-cover text-center">
-    <img src="../assets/home/photo.jpg" alt="">
+    <img src="../assets/home/avatar.png" alt="">
     <h1>Mohamed Hassan</h1>
     <h3>Front-End Developer</h3>
     <div class="social">

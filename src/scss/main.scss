@@ -18,6 +18,9 @@
 @import "./components/buttons";
 @import "./components/settings-box";
 
-//Import themes
+// Import themes
 @import "./themes/front-colors";
 @import "./themes/back-colors";
+
+// Import Helpers
+@import "./helpers/animations";
