@@ -23,7 +23,9 @@ export default {
     SettingsBox
   },
   mounted() {
-    document.querySelector(".loader-wrapper").style.display = "none";
+    setTimeout(() => {
+      document.querySelector(".loader-wrapper").style.display = "none";
+    }, 3000);
   }
 };
 </script>
