@@ -9,7 +9,10 @@
       </div>
       <div class="col-sm-6 col-lg">
         <div class="info">
-          <font-awesome-icon icon="address-book" class="icon"></font-awesome-icon>
+          <font-awesome-icon
+            icon="address-book"
+            class="icon"
+          ></font-awesome-icon>
           <p>Egypt</p>
         </div>
       </div>

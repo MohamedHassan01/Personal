@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <div class="logo">
-      <h1>Personal</h1>
+      <h1>Moog</h1>
     </div>
     <nav>
       <ul class="list-unstyled">
@@ -25,7 +25,10 @@
         </li>
         <li>
           <router-link to="/portfolio">
-            <font-awesome-icon icon="briefcase" class="icon"></font-awesome-icon>
+            <font-awesome-icon
+              icon="briefcase"
+              class="icon"
+            ></font-awesome-icon>
             <span>Portfolio</span>
           </router-link>
         </li>
@@ -37,7 +40,10 @@
         </li>
         <li>
           <router-link to="/contact">
-            <font-awesome-icon icon="phone-square-alt" class="icon"></font-awesome-icon>
+            <font-awesome-icon
+              icon="phone-square-alt"
+              class="icon"
+            ></font-awesome-icon>
             <span>Contact</span>
           </router-link>
         </li>
